@@ -9,8 +9,14 @@ public class WelcomeController: ControllerBase
 {
 
     [HttpGet]
-    public string welcome()
+    public string Welcome()
     {
         return WelcomeBuilder.Build(null);
+    }
+
+    [HttpGet("{name}")]
+    public string Welcome(String name)
+    {
+        return WelcomeBuilder.Build(name);
     }
 }
